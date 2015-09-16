@@ -1,0 +1,18 @@
+{
+    "name": "browserape",
+    "version": "0.0.1",
+    "description": "Browserape (Browserape postgresql editor) is a PostgreSQL web client using Node.js and jQuery.",
+    "homepage": "https://github.com/lachsfilet/browserape",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lachsfilet/browserape.git"
+    },
+    "author": "Jan Renken",
+    "dependencies": {
+        "express": "4.13.3",
+        "socket.io": "1.3.6",
+        "pg": "4.4.1"
+    },
+    "license": "GPL 3"
+}
+    
