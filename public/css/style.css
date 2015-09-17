@@ -1,8 +1,65 @@
 @font-face {
     font-family: "Open Sans";
-    src: url("OpenSans-Regular.ttf");
+    src: url("../fonts/OpenSans-Regular.ttf");
 }
 
 body {
     font-family: "Open Sans", sans-serif;
+}
+
+header, footer {
+    height: 75px;
+    background-color: #c3cbed;
+    /* color: #123bed; */
+    color: #09164e;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: block;
+}
+
+footer {
+   bottom: 0;
+}
+
+header {
+   top: 0;
+}
+
+#mainPanel {
+   margin: 75px 0 75px 250px;
+   height: 100%;
+   width: 100%;
+}
+
+#serverPanel {
+   left: 0;
+   width: 250px;
+   /* background-color: #6881ed; */
+   background-color: #dadeed;
+   color: #ffffff;
+   position: fixed;
+   top: 75px;
+   bottom: 75px;
+}
+
+#editorPanel {
+   height: 100%;
+   width: 100%;
+}
+
+#resultPanel {
+   height: 50%;
+   width: 100%;
+   background-color: #e4e6f0;
+}
+
+#commandPanel {
+   height: 50%;
+   width: 100%;
+}
+
+
+h1 {
+   margin-left: 21px;
 }

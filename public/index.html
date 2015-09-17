@@ -5,15 +5,27 @@
         <meta charset="UTF-8">
         <meta name="author" content="Jan Renken">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css">
     </head>
     <body>
         <header>
              <h1>Browserape</h1>
         </header>
-        <div id="main">
+        <div id="mainPanel">
+            <div id="serverPanel">
+            </div>
+            <div id="editorPanel">
+                <div id="commandPanel">
+                </div>
+                <div id="resultPanel">
+                </div>
+            </div>
         </div>
         <footer>            
         </footer>
+        <script src="/js/libs/jquery-2.1.4.min.js"></script>
+        <script src="/js/libs/jquery-ui.min.js"></script>
         <script src="/js/browserape.js"></script>
     </body>
 </html>
