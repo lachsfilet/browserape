@@ -3,8 +3,14 @@
     src: url("../fonts/OpenSans-Regular.ttf");
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
+    height: 100%;
+    margin: 0;
 }
 
 header, footer {
@@ -27,7 +33,7 @@ header {
 }
 
 #mainPanel {
-   margin: 75px 0 75px 250px;
+   margin: 0 0 -75px 0;
    height: 100%;
    width: 100%;
 }
