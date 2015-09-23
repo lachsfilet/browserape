@@ -1,15 +1,10 @@
 window.browserape.editor = {
     
         wrapText: function (event, ui) {
-            var source = $(this);
-            var dropvalue = source.data("dropvalue");
-            var getter = softship.sapas.tariff[dropvalue.namespace][dropvalue.method];
-            var text = getter(source);
+            ui.helper.css( {"width": "auto", "list-style": "none"});
 
-            ui.helper.data("dropvalue", text);
-            ui.helper.css("width", "auto");
-
-            var editor = $("#formula-editor-pad");
+            var editor = $("#editpad");
+            editor.toggleClass("editpad-hover");
             var content = editor.contents();
             //console.debug(content);
 
@@ -20,14 +15,14 @@ window.browserape.editor = {
                     : this;
             }).map(function (index, value) {
                 return typeof value === "string" ?
-                    '<span class="text-editor-word">' + this + '</span>' :
+                    '<span class="editpad-word">' + this + '</span>' :
                     this;
             }).get();
 
-            var contentListPlaceholder = ['<span class="formula-editor-droppable">|</span>'];
+            var contentListPlaceholder = contentList.length > 0 ?  ['<span class="editpad-droppable">|</span>'] : [];
             $.each(contentList, function () {
                 contentListPlaceholder.push(this);
-                contentListPlaceholder.push('<span class="formula-editor-droppable">|</span>');
+                contentListPlaceholder.push('<span class="editpad-droppable">|</span>');
             });
 
             editor.empty();
@@ -36,29 +31,30 @@ window.browserape.editor = {
             //console.debug(contentList);
             //console.debug(contentListPlaceholder);
             
-            var droppable = ".formula-editor-droppable";
-            if ($(".text-editor-word").length === 0)
-                droppable = "#formula-editor-pad";
+            var droppable = ".editpad-droppable";
+            if ($(".editpad-droppable").length === 0)
+                droppable = "#editpad";
 
             $(droppable).droppable({
-                accept: ".draggable",
-                hoverClass: "formula-editor-droppable-hover",
-                drop: window.softship.sapas.tariff.formulaEditor.insertDroppedText,
+                accept: ".draggable-entity",
+                hoverClass: "editpad-droppable-hover",
+                drop: browserape.editor.insertDroppedText,
                 tolerance: "pointer"
             });
         },
 
         unwrapText: function () {
-            $("#formula-editor-pad").find(".text-editor-word").contents().unwrap();
-            $(".formula-editor-droppable").remove();
+            var editpad = $("#editpad"); 
+            editpad.find(".editpad-word").contents().unwrap();
+            $(".editpad-droppable").remove();
+            editpad.toggleClass("editpad-hover");
         },
 
         insertDroppedText: function(event, ui) {
             var element = ui.helper;
-            console.debug(element.data("dropvalue"));
-            var text = element.data("dropvalue");
+            var text = element.text();
             var target = $(this);
-            if (this.id === "formula-editor-pad")
+            if (this.id === "editpad")
                 target.append(text);
             else
                 target.after(text);
@@ -91,3 +87,15 @@ window.browserape.editor = {
             };
         }
 };
+
+$(".draggable-entity").draggable({
+    appendTo: "body",
+    containment: "body",
+    cursor: "grab",
+    cursorAt: { left: -20, top: -20 },
+    helper: "clone",
+    opacity: 0.4,
+    revert: "invalid",
+    start: browserape.editor.wrapText,
+    stop: browserape.editor.unwrapText
+});

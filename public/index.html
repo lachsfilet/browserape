@@ -12,20 +12,28 @@
         <header>
              <h1>Browserape</h1>
         </header>
-        <div id="mainPanel">
-            <div id="serverPanel">
+        <div id="mainpanel">
+            <div id="serverpanel">
+                <ul id="entitypanel">
+                    <li class="draggable-entity">Foo</li>
+                    <li class="draggable-entity">Bar</li>
+                </ul>
             </div>
-            <div id="editorPanel">
-                <div id="commandPanel">
+            <div id="editorpanel">
+                <div id="commandpanel">
+                    <div id="editpad" contenteditable="true"></div>
                 </div>
-                <div id="resultPanel">
+                <div id="resultpanel">
                 </div>
             </div>
         </div>
-        <footer>            
+        <footer>
+            <div id="statuspanel">
+            </div>            
         </footer>
         <script src="/js/libs/jquery-2.1.4.min.js"></script>
         <script src="/js/libs/jquery-ui.min.js"></script>
         <script src="/js/browserape.js"></script>
+        <script src="/js/editor.js"></script>
     </body>
 </html>

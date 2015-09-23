@@ -1,6 +1,11 @@
 @font-face {
-    font-family: "Open Sans";
-    src: url("../fonts/OpenSans-Regular.ttf");
+    font-family: Asap;
+    src: url("../fonts/Asap-Regular.ttf");
+}
+
+@font-face {
+    font-family: Inconsolata;
+    src: url("../fonts/Inconsolata-LGC.otf");
 }
 
 html {
@@ -8,7 +13,8 @@ html {
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: Asap, sans-serif;
+    color: #09164e;
     height: 100%;
     margin: 0;
 }
@@ -17,7 +23,6 @@ header, footer {
     height: 75px;
     background-color: #c3cbed;
     /* color: #123bed; */
-    color: #09164e;
     left: 0;
     right: 0;
     position: fixed;
@@ -25,50 +30,81 @@ header, footer {
 }
 
 footer {
-   bottom: 0;
+    bottom: 0;
 }
 
 header {
-   top: 0;
+    top: 0;
 }
 
-#mainPanel {
-   width: 100%;
-   height: 100%;
-   padding: 75px 0 75px 250px;
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
+#mainpanel {
+    width: 100%;
+    height: 100%;
+    padding: 75px 0 75px 250px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#serverPanel {
-   left: 0;
-   width: 250px;
-   /* background-color: #6881ed; */
-   background-color: #dadeed;
-   color: #ffffff;
-   position: fixed;
-   top: 75px;
-   bottom: 75px;
+#serverpanel {
+    left: 0;
+    width: 250px;
+    /* background-color: #6881ed; */
+    background-color: #dadeed;
+    position: fixed;
+    top: 75px;
+    bottom: 75px;
 }
 
-#editorPanel {
-   height: 100%;
-   width: 100%;
+#entitypanel {
+    background-color: #e4e6f0;
+    margin: 20px;
+    padding: 10px;
 }
 
-#resultPanel {
-   height: 50%;
-   width: 100%;
-   background-color: #e4e6f0;
+#entitypanel li {
+    list-style: none;
+    margin: 2px;
+    cursor: grab;
 }
 
-#commandPanel {
-   height: 50%;
-   width: 100%;
+#editorpanel {
+    height: 100%;
+    width: 100%;
 }
 
+#resultpanel {
+    height: 50%;
+    width: 100%;
+    background-color: #e4e6f0;
+}
 
-h1 {
-   margin-left: 21px;
+#commandpanel {
+    height: 50%;
+    width: 100%;
+    overflow: auto;
+}
+
+#editpad {
+    min-height: 100%;
+    width: 100%;
+    font-family: Inconsolata, monospace;
+}
+
+.editpad-hover {
+    background-color: #f4f5f9;
+}
+
+span.editpad-droppable-hover {
+   color: #09164e;
+   background-color: #09164e;
+}
+
+.editpad-droppable {
+    color: #ffff00;
+    background-color: #ffff00;
+}
+
+h1 {    
+    margin-left: 21px;
 }
