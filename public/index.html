@@ -14,13 +14,23 @@
         </header>
         <div id="mainpanel">
             <div id="serverpanel">
-                <ul id="entitypanel">
-                    <li class="draggable-entity">Foo</li>
-                    <li class="draggable-entity">Bar</li>
-                </ul>
+                <div id="serverobjectpanel">
+                    <h3>Tables</h3>
+                    <div id="entitypanel">
+                        <ul class="objectlist">
+                            <li class="draggable-entity">Foo</li>
+                            <li class="draggable-entity">Bar</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div id="editorpanel">
                 <div id="commandpanel">
+                    <ul>
+                        <li>
+                            <a href="#editpad">SQL script</a>
+                        </li>
+                    </ul>
                     <div id="editpad" contenteditable="true"></div>
                 </div>
                 <div id="resultpanel">
@@ -35,5 +45,6 @@
         <script src="/js/libs/jquery-ui.min.js"></script>
         <script src="/js/browserape.js"></script>
         <script src="/js/editor.js"></script>
+        <script src="/js/server.js"></script>
     </body>
 </html>

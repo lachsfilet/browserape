@@ -56,13 +56,13 @@ header {
     bottom: 75px;
 }
 
-#entitypanel {
+.objectlist {
     background-color: #e4e6f0;
     margin: 20px;
     padding: 10px;
 }
 
-#entitypanel li {
+.objectlist li {
     list-style: none;
     margin: 2px;
     cursor: grab;
@@ -86,8 +86,6 @@ header {
 }
 
 #editpad {
-    min-height: 100%;
-    width: 100%;
     font-family: Inconsolata, monospace;
 }
 
