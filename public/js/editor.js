@@ -19,7 +19,7 @@ window.browserape.editor = {
                     this;
             }).get();
 
-            var contentListPlaceholder = contentList.length > 0 ?  ['<span class="editpad-droppable">|</span>'] : [];
+            var contentListPlaceholder = contentList.length > 0 ? ['<span class="editpad-droppable">|</span>'] : [];
             $.each(contentList, function () {
                 contentListPlaceholder.push(this);
                 contentListPlaceholder.push('<span class="editpad-droppable">|</span>');
@@ -85,17 +85,19 @@ window.browserape.editor = {
                 element: range.startContainer,
                 position: range.startOffset
             };
-        }
-};
+        },
 
-$(".draggable-entity").draggable({
-    appendTo: "body",
-    containment: "body",
-    cursor: "grab",
-    cursorAt: { left: -20, top: -20 },
-    helper: "clone",
-    opacity: 0.4,
-    revert: "invalid",
-    start: browserape.editor.wrapText,
-    stop: browserape.editor.unwrapText
-});
+        addDraggable: function(element) {
+                element.draggable({
+                appendTo: "body",
+                containment: "body",
+                cursor: "grab",
+                cursorAt: { left: -20, top: -20 },
+                helper: "clone",
+                opacity: 0.4,
+                revert: "invalid",
+                start: browserape.editor.wrapText,
+                stop: browserape.editor.unwrapText
+            });
+       }
+};

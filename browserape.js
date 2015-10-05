@@ -14,6 +14,13 @@ if(!config || !config.port || !config.index)
 server.listen(config.port);
 app.use(express.static("public"));
 app.get("/", function(req, res) {
-    res.sendfile(config.index)
+    res.sendFile(config.index);
 });
 
+app.get("/objects", function(req, res) {
+    res.json({
+        "tables" : [
+           "Content", "Permission", "PermissionRole", "Role", "User", "UserRole", "System"
+        ]
+    });
+});
